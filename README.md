@@ -14,22 +14,9 @@
 
 电视端通过本仓库 Release 的 `latest/download/update.json` 检查新版本，下载 APK 并校验 SHA-256 与签名后由系统安装确认。首次需手动安装 APK 并允许「安装未知来源应用」，之后更新无需传文件。
 
-当前发布：[0.9.66](https://github.com/xhg8124-a11y/hongguoTV-updates/releases/latest)
+APK(https://github.com/xhg8124-a11y/hongguoTV-updates/releases/latest)
 
 系统要求：Android 8.0（API 26）及以上，ARM64 设备。
-
-## 更新网络参数
-
-更新器（`AppUpdates.kt`）的网络超时配置：
-
-| 操作 | 连接超时 | 读超时 | 整体超时 |
-| ---- | -------- | ------ | -------- |
-| 检查更新（update.json） | 10 秒 | 40 秒 | 25 秒（单次调用限死） |
-| 下载 APK | 10 秒 | 40 秒 | 10 分钟 |
-
-- 读超时指两次收到数据之间的最大间隔，慢 CDN 分段下发时只要持续有字节流就不会触发。
-- 整体超时兜底整次下载；APK 约 15MB，10 分钟对应平均速度约 25KB/s，弱网也能完成。
-- 下载失败保留当前版本，30 分钟后可自动重试；也可在 设置 → 版本与更新 手动检查。
 
 ## 源码与许可
 
