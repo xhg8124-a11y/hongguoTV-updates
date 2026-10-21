@@ -14,8 +14,6 @@
 
 电视端通过本仓库 Release 的 `latest/download/update.json` 检查新版本，下载 APK 并校验 SHA-256 与签名后由系统安装确认。首次需手动安装 APK 并允许「安装未知来源应用」，之后更新无需传文件。
 
-APK(https://github.com/xhg8124-a11y/hongguoTV-updates/releases/latest)
-
 系统要求：Android 8.0（API 26）及以上，ARM64 设备。
 
 ## 源码与许可
